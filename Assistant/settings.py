@@ -100,7 +100,7 @@ DATABASES = {
     }
 }
 
-YOUTUBE_API_KEY = 'AIzaSyAX43o-ReGMrSZ-Pxei1FOrsGjAb4c9Ct8'
+YOUTUBE_API_KEY = API KEY
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
