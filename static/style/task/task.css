@@ -1,0 +1,26 @@
+.list-group{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #eee;
+    }
+    h1{
+        text-align: center;
+        margin-top: 3rem;
+    }
+    .list-group-item{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .task-main h1{
+        text-align: center;
+        margin-top: 3rem;
+     
+        
+       
+    }
+   h1 i{
+        margin-left:3rem;
+    }

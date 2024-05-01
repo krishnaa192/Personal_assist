@@ -1,0 +1,26 @@
+
+      
+.form-elements{
+    margin-top: 2rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    text-align: center;
+}
+form{
+    border: 2px solid #eee;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+textarea{
+    height: 30rem;
+    width: 30rem;
+}
+#description{
+    resize: none;
+    width: 40rem;
+}

@@ -1,0 +1,35 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+}
+.add-card {
+    border: 2px dashed #aaa;
+    background-color: #f9f9f9;
+    color: #aaa;
+}
+.add-card:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+.cat-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 15vh;
+}
+cat-list{
+    width: 50vw;
+}
+.cat-main h1{
+    text-align: center;
+    margin-top: 3rem;
+}
+.card a{
+    text-decoration: none;
+    color: black;
+}

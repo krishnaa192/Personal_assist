@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My App</title>
+  <style>
+    /* Header styles */
+    header {
+      background-color: #333; /* Dark background color */
+      color: #fff; /* Text color */
+      padding: 10px 20px; /* Padding around content */
+      display: flex; /* Use flexbox for layout */
+      justify-content: space-between; /* Space items evenly */
+      align-items: center; /* Center items vertically */
+    }
+
+    /* Logo styles */
+    .logo {
+      font-size: 24px; /* Font size */
+      font-weight: bold; /* Bold font weight */
+    }
+
+    /* Navigation styles */
+    nav ul {
+      list-style-type: none; /* Remove bullet points */
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+    }
+
+    nav ul li {
+      display: inline-block; /* Display items inline */
+      margin-right: 20px; /* Add right margin between items */
+    }
+
+    nav ul li:last-child {
+      margin-right: 0; /* Remove margin from last item */
+    }
+
+    nav ul li a {
+      color: #fff; /* Text color */
+      text-decoration: none; /* Remove underline */
+      transition: color 0.3s; /* Smooth color transition */
+    }
+
+    nav ul li a:hover {
+      color: #ccc; /* Change color on hover */
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <!-- Logo -->
+  <div class="logo">App</div>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="{%url 'notes' %}">Notes</a></li>
+      <li><a href="{% url 'videos'%}">Videos</a></li>
+      <li><a href="#">My Activity</a></li>
+      {% if request.user.is_authenticated     %}
+        <li><a href="#">Logout</a></li>
+        {% else %}
+    
+      <li><a href="#">Login</a></li>
+        <li><a href="#">Register</a></li>
+        {% endif %}
+
+      
+      
+    </ul>
+  </nav>
+</header>
+
+<!-- Content goes here -->
+
+</body>
+</html>

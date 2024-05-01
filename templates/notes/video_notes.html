@@ -1,0 +1,86 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha384-JSO9xY59Tk2ZHv3Mlx8Z1fjh36fYgHRk8KmC2g6dEwqj2aBQ1R6WIsjzZVim/Tjo" crossorigin="anonymous">
+</head>
+<style>
+  .video-notes-container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  .video-section {
+    flex-basis: 70%;
+    padding-right: 20px; /* Additional space between video and notes */
+  }
+
+  .notes-section {
+    flex-basis: 30%;
+    margin-top: 5rem;
+  }
+
+  .collapse-horizontal {
+    flex-direction: row;
+  }
+
+  .card {
+    margin-top: 10px;
+  }
+  textarea{
+    height: 52vh;
+  }
+</style>
+
+<body>
+{% include 'notes/note_header.html'%}
+  <div class="video-notes-container">
+    <div class="video-section">
+      <h1>{{video_title}}</h1>
+      <!-- Display the YouTube video -->
+      <iframe width="100%" height="500px" src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+
+    <div class="notes-section">
+      <p>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+          aria-expanded="false" aria-controls="collapseWidthExample">
+          <i class="fas fa-sticky-note"></i> Notes
+        </button>
+      </p>
+
+      <div style="min-height: 120px;">
+        <div class="collapse collapse-horizontal" id="collapseWidthExample">
+          <div class="card card-body">
+            <form method="POST">
+              {% csrf_token %}
+              <textarea name="note_content" rows="5" cols="50">
+                {% if notes %}
+                   {{ notes.content }}
+                {% else %}
+                   Write your notes here...
+              {% endif %}
+              </textarea>
+              <button type="submit">Save Note</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>

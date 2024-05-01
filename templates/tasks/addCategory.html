@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <link rel="stylesheet" href="{% static 'style/task/cat-form.css' %}">
+</head>
+<body>
+    {% include 'header.html' %}
+   
+    <div class="form-elements">
+    <form action="" method="POST" >
+        {% csrf_token %}
+        <h1>
+            Add Category
+            </h1>
+        
+        <div class="mb-3">
+            {{ form.name.label_tag }}
+           <br>
+            {{ form.name }}
+        </div>
+    
+
+
+        <button type="submit" class="btn btn-primary" style="background-color: #264653;">Add </button>
+
+    </form>
+    </div>
+</body>
+</html>
